@@ -1,0 +1,90 @@
+.btn-default{
+    transition: all 0.2s;
+    padding: 15px;
+    background-color: $blue_color;
+    text-align: center;
+    display: inline-block;
+    &:hover{
+        color: $white;
+    }
+}
+
+
+.btn-callback{
+    
+    display: flex;
+    @extend .flex-center;
+    background-color: transparent; 
+     
+    position: relative;
+    
+   
+    text-align: center;
+    font-weight: 200;
+    font-size: 1.4rem;
+    transition: all .2s;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    overflow: hidden;
+    cursor: pointer;
+    .dropdown{
+        transition: all .2s;
+        width: calc(100% + 8rem);
+   
+        right: -4rem;
+        position: absolute;
+        bottom: 0;
+        display: block;
+        transform: translateY(150%);
+        opacity: 0;
+        
+        list-style: none;
+        margin: 0;
+        padding: 0;
+         
+        li{
+            margin-top: 10px;
+            background-color: rgba(0, 0, 0, .6);
+            box-shadow: 0px 0px 1.2rem 0px $blue_color;
+            padding: 1rem 5px ;
+            font-size: 1.4rem;
+            a{
+                display: block;
+                
+                @extend .text-blue-light;   
+            }
+            &:hover a{
+                 color: white;
+                 text-shadow: none; 
+            }   
+            &:hover{
+                box-shadow: none;
+                background-color: $navbar_color; 
+            }
+        }
+    }
+    &:hover{
+        
+        //@extend .text-shadow-blue;
+       
+        overflow: visible;
+        .dropdown{
+            opacity: 1;
+            transform: translateY(100%);
+            
+            
+        }
+    }
+    
+    
+}
+
+.btn-default.disable{    
+    background-color: $blue_dark_color;  
+    color: $blue_light_color;
+    &:hover{
+        color: $white;
+        background-color: $blue_color;  
+    }
+}

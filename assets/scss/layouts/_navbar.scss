@@ -1,0 +1,189 @@
+$nav_height: 6.5rem;
+
+.navbar-size{
+    height: $nav_height; 
+}
+
+.navbar-logo-wrapper{
+    position: relative;
+    height: 100%;
+    background-color: transparent; 
+    padding: 0 10px;
+}
+
+.navbar-container{
+    background-color: $navbar_second_color;
+    position: relative;
+    z-index: 14;
+    border-bottom: 1px solid $blue_color;
+}
+
+.navbar-logo-container{
+    height: #{$nav_height - 1.6};
+    position: relative;
+    width: auto;
+
+    img{
+        max-width: 100% !important;
+        max-height: 100% !important;
+    }
+    @include media-breakpoint-down(md){
+       // height: 3rem;
+       // width: 10rem;
+        img{
+            max-width: 80% !important;
+            max-height: 90% !important;
+        }
+    }
+}
+.navbar-logo-part{
+    height: 60%;
+    margin-left: 20%;
+    @include media-breakpoint-down(md){
+        height: 50%;
+        margin-left: 5%;
+     }
+}
+
+
+.navbar-toggle{
+    display: flex;
+    flex-direction: column;
+    width: 3rem;
+    height: 3rem;
+    justify-content: space-around;
+    display: block;
+    position: relative;
+    span{
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        background-color: #fff;
+        display: block;
+        top: 25%;
+        margin-top: -1px;
+        transition: all 0.2s linear;
+        &:nth-child(even){
+            top: 50%;
+            
+        }
+        &:last-child{
+            top: 75%;
+            
+        }
+    }
+}
+
+.res-modal-body-hidden{
+    .navbar-toggle{
+        display: flex;
+        flex-direction: column;
+        width: 3rem;
+        height: 3rem;
+        justify-content: space-around;
+        display: block;
+        span{
+            top: 50%;
+            transform: rotate(45deg);
+            &:nth-child(even){
+                opacity: 0;
+            }
+            &:last-child{
+                transform: rotate(-45deg);
+            }
+        }
+    }
+}
+
+.navbar-item{
+  display: inline-flex;
+    align-items: baseline;  
+    padding: 5px 20px;
+     
+}
+.navbar-nav{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.navbar-link{
+    color: $text_color_blue;
+    font-size: 1.4rem;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    &:hover, &.active{
+        color: $white;
+        &:after{
+            width: 90%;
+            left: 5%;
+            height: 1px;
+            content: ' ';
+            display: block;
+            background-color: $text_color_blue;
+            position: absolute;
+            bottom: -5px;
+            @include media-breakpoint-down(md){
+                content: none;
+            }
+        }
+    }
+}
+.navbar-phone{
+    font-size: 1.3rem;
+    font-weight: 300;
+}
+
+@include media-breakpoint-down(sm){
+    .res-modal-body-hidden{
+        overflow: hidden;
+    }
+    .navbar-response{
+        z-index: 15;
+        background-color: transparentize($blue_color, $amount: 0.2);
+        width: 250px !important;
+        position: fixed;
+         
+        top: $nav_height;
+        left: 0;
+        transform: translateX(-250px);
+        height: calc(100vh - #{$nav_height});
+        transition: transform 0.2s;
+        .navbar-item{
+            width: 100%;
+            display: flex;
+            padding: 0 1rem;
+        }
+        .navbar-link{
+            width: 100%;
+            padding: 1.3rem 2rem;
+            border-bottom: .1rem solid transparentize($white, 0.5);
+            color: $white;
+            font-weight: normal;
+            &:hover, &.active{
+                
+                &:after{
+                    content: none;  
+                }
+            }
+        }
+        &.show{
+            transform: translateX(0);
+        }
+    }
+}
+
+@include media-breakpoint-down(xs){
+    .navbar-response{
+       // top: calc(5rem + 1px);
+       // height: calc(100vh - 5rem - 1px);
+    }
+}
+
+

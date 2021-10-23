@@ -1,0 +1,90 @@
+.box-main{
+    width: 15rem;
+    height: 13rem;
+    position: relative;
+    max-width: 100%;
+}
+
+
+
+.box-main-wrapper{
+    margin: 0.5rem;
+    height: 15vh;
+    max-height: 90vw;
+    max-width: 250px;
+    width: 27vh;
+    position: relative;
+    min-height: 80px;
+    min-width: 120px;
+    font-size: 1.1rem;
+    line-height: 1.3em;
+    font-weight: lighter;
+
+    @include media-breakpoint-down(md){
+        min-width: 0;
+        max-width: calc(25% - 1rem);
+        min-height: 40px;
+        max-height: 20vw;
+    }
+     
+}
+
+.box-main-container{
+    position: relative;
+    height: calc(100vh  - 12rem);
+    //margin-bottom: 1rem;
+
+    @include media-breakpoint-down(sm){
+        height: calc(100vh - 2px - 15rem);
+    }
+}
+
+.box-main-carousel{
+    max-width: 100%;
+    min-width: calc(170px*4 + 10px*4);
+    width: calc(108vh + 40px);
+
+    @include media-breakpoint-down(md){
+       
+        min-width: 0;
+    }
+     
+}
+
+
+
+.box-main-name{
+    font-size: 6rem;
+    //font-weight: 900;
+    text-align: center;
+    @include media-breakpoint-down(sm){
+        font-size: 3rem;
+    }
+}
+
+.box-main-more{
+    position: absolute;
+    bottom: 0;
+    height: 2rem;
+    display: block;
+    width: 100%;
+    left: 0;
+    background-color: transparentize($blue_color, 0.5);
+    transform: translateY(2rem);
+    transition: all 0.2s;
+     
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+}
+.active .box-main-more{
+    transform: translateY(0);
+    &:hover{
+        height: 100%;
+        color: white;
+       font-weight: normal;
+        background-color: transparentize(darken($blue_color, 25%), 0.2);
+         
+    }
+   
+}

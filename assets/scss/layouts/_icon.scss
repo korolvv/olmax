@@ -1,0 +1,229 @@
+.icon-wrapper{
+
+}
+
+@mixin icon-wrapper() {
+    width: 6rem;
+    height: 6rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.icon-wrapper-default{
+    @include icon-wrapper();
+ }
+
+ .icon-wrapper-index{
+    @extend .icon-wrapper-default; 
+    width: 8rem;
+    height: 8rem;
+    max-height: 70%;
+ }
+
+
+.icon-wrapper-round{
+   @extend .icon-wrapper-default;
+   border-radius: 100%;
+   
+}
+
+
+
+ 
+.icon{
+    max-width: 100%;
+    max-height: 100%;
+    position: relative;
+    width: 100%;
+     height: 100%;
+    svg{
+    max-width: 100%;
+    max-height: 100%;
+    fill: $white;
+    width: 100%;
+     height: 100%;
+}
+}
+
+.icon-blue svg{
+    fill: $blue_color;
+}
+
+.icon-blue-dark svg{
+    fill: $blue_dark_color;
+}
+
+.icon-wrapper-contacts, .icon-wrapper-fb, .icon-wrapper-phone{
+    @extend .icon-wrapper-default;
+    width: 2.4rem;
+    height: 2.4rem;;
+    padding: 0.4rem;
+    border: 1px solid $white;
+    margin-right: .8rem;
+    font-size: 1rem;
+    line-height: 1rem;
+    &:last-child{
+        margin-right: 0;  
+    }
+    svg{
+        max-height: 1.6rem;
+    }
+   
+ }
+
+ .icon-wrapper-contacts{
+     transition: all 0.2s;
+     font-weight: 400;
+     span{
+         margin-bottom: -0.2em;
+     }
+    &:hover{
+        background-color: $white;
+        color: $blue_light_color;
+     }
+ }
+
+ .icon-wrapper-contacts2{
+    @extend .icon-wrapper-default;
+    padding: 0 1rem;
+    width: 6.5rem;
+    height: 4.5rem;  
+ }
+
+ .icon-wrapper-contacts2-large, .icon-wrapper-clients-tabs{
+    @extend .icon-wrapper-default;
+    width: 7rem;
+    height: 5rem; 
+    padding: 0;
+    @include media-breakpoint-down(md){
+        width: 7rem;
+        height: 4rem;
+    }
+    svg{
+        fill: white;
+            filter: drop-shadow( 3px 3px 2px $blue_color) drop-shadow( -3px -3px 2px $blue_color);
+    }
+ }
+
+
+
+ .icon-wrapper-about-main{
+    @extend .icon-wrapper-default;
+    width: 10rem;
+    height: 10rem; 
+    padding: 0;
+    svg{
+        fill: transparent;
+        stroke-width: 6px;
+        stroke: white;
+            filter: drop-shadow( 3px 3px 2px $blue_color) drop-shadow( -3px -3px 2px $blue_color);
+    }
+    @include media-breakpoint-down(md){
+        width: 6rem;
+        height: 6rem;
+    }
+ }
+
+ .icon-wrapper-solutions{
+     @extend .icon-wrapper-about-main;
+     width: 80%;
+     height: 80%;
+      
+ }
+
+ .icon-wrapper-index-tabs{
+    @extend .icon-wrapper-default;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    svg{
+        fill: transparent;
+        stroke-width: inherit;
+        stroke: white;
+            filter: drop-shadow( 3px 3px 2px $blue_color) drop-shadow( -3px -3px 2px $blue_color);
+    }
+}
+
+ .icon-wrapper-about-nav{
+     .round-svg-symbol svg path{
+        filter: drop-shadow( 3px 3px 2px $blue_color) drop-shadow( -3px -3px 2px $blue_color);
+        
+     }
+ }
+
+ .icon-wrapper-clients-tabs{
+     
+    height: 5rem;
+ 
+    svg{
+        fill: transparent;
+        stroke-width: 18;
+        stroke: white;
+        
+    }
+ }
+
+ .icon-wrapper-partners, .icon-wrapper-partners2{
+    @extend .icon-wrapper-default;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    svg{
+        fill: transparent;
+        stroke: white;
+        stroke-width: 3!important;
+ 
+            filter: drop-shadow( 3px 3px 2px $blue_color) drop-shadow( -3px -3px 2px $blue_color);
+    }
+ }
+
+ .icon-wrapper-partners2{
+    width: 80%;
+    height: 70%;
+    svg{
+        stroke-width: 6!important;
+    }
+ }
+
+ 
+ 
+
+ .icon-wrapper-phone{
+     border-color: transparent;
+ }
+ .icon-wrapper-coub{
+     
+     padding: 20%;
+     svg{
+         stroke: $blue_color;
+         fill: transparent;
+         stroke-width: 12!important;
+         filter: drop-shadow( 3px 3px 2px $blue_color) drop-shadow( -3px -3px 2px $blue_color);
+     }
+     &:hover svg{
+         stroke: white;
+     }
+ }
+ .icon-wrapper-fb{
+     background-color: $blue_light_color;
+     border: 1px solid $blue_light_color;
+
+     &:hover{
+        background-color: $white;
+        border: 1px solid $white;
+         svg{
+             fill: $blue_light_color;
+         }
+     }
+ }
+ .icon-wrapper-in{
+     @extend  .icon-wrapper-fb;
+ }
+
+ .icon-stroke0 svg{
+    stroke-width: 0!important;
+ }

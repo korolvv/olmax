@@ -1,0 +1,17 @@
+$blue_color: #2769ac;
+$blue_fort_color: rgb(15, 102, 173);
+$blue_light_color: #3099e3;
+$blue_dark_color: #153351;
+$blue_dark_color08: transparentize($blue_dark_color, 0.2);
+
+$white: white;
+$white08: transparentize($white, 0.2);
+
+$fill_color: rgb(48, 153, 227);
+
+$text_color: $white;
+$text_color_blue: #347dc8;
+$navbar_color: transparentize($blue_color, 0.2);
+$navbar_color_new: transparentize(#242423 , .4);
+$navbar_second_color: transparentize(#000, 0.2);
+

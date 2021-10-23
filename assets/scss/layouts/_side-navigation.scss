@@ -1,0 +1,53 @@
+.side-navigation-container{
+    width: 205px;
+    height: 400px;
+    position: fixed;
+    top: 50%;
+    margin-top: -150px;
+    right: 0;
+    z-index: 5;
+    transform: scale(0.7);
+    transform-origin: center right;
+    transition: transform 0.3s;
+    &:hover{
+        transform: scale(1);
+    }
+}
+
+.side-navigation{
+    stroke: $fill_color;
+}
+.side-navigation-item, .side-navigation-icon{
+    transition: fill 0.4s;
+}
+.side-navigation-icon{
+    stroke-width: 0;
+    fill: $fill_color;
+    &.active, &.nuxt-link-exact-active{
+        fill: white;
+    }
+    
+}
+.side-navigation-label{
+    font-size: 9px;
+    font-weight: 400;
+    stroke-width: 0;
+    fill: white;
+    text-transform: uppercase;
+}
+
+.side-navigation-item{
+    fill: rgba(0,0,0, 0);
+}
+
+.side-navigation-link{
+    
+    &:hover, &.nuxt-link-exact-active{
+        .side-navigation-item{
+            fill: transparentize($blue_dark_color, 0.6);
+        } 
+
+    }
+}
+
+ 

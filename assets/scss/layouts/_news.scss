@@ -1,0 +1,24 @@
+.news{
+    padding: 30px;
+}
+
+.news-container{
+    @extend .container;
+    max-width: 900px;
+}
+
+.news-title{
+    margin-bottom: 30px;
+}
+.news-content{
+    margin-bottom: 30px;
+}
+
+.news-btn{
+    display: inline-block;
+    background-color: $blue_dark_color08;
+     
+    min-width: 100px;
+    text-align: center;
+    padding: 10px 15px;
+}

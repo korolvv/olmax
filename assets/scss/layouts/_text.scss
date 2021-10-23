@@ -1,0 +1,103 @@
+.text-upper{
+    text-transform: uppercase;
+}
+
+.text-bold{
+    font-weight: bold;
+}
+
+.text-thin{
+    font-weight: 200 !important;
+}
+
+.text-normal{
+    font-weight: 400 !important;
+}
+
+.text-extra-bold{
+    font-weight: 900 !important;
+}
+
+.text-title-middle{
+    font-size: 2rem;
+}
+
+.text-title-middle-large{
+    font-size: 3rem;
+}
+
+.text-title-large{
+    font-size: 4rem !important;
+}
+
+.text-title-small{
+    font-size: 1.7rem;
+}
+
+.text-blue{
+    color: $blue_color;
+}
+
+.text-blue-light{
+    color: $blue_light_color;
+}
+
+.text-grey{
+    color: grey;
+}
+
+.text-spacing2{
+    letter-spacing: 2px!important;
+}
+.text-spacing1{
+    letter-spacing: 1px!important;
+}
+
+.text-spacing05{
+    letter-spacing: 0.5px !important;
+}
+ 
+
+.text-middle{
+    margin-bottom: -0.2em;
+    position: relative;
+}
+
+$hadowW: 1px;
+$hadowW2: 1px;
+.text-shadow-blue-light{
+    text-shadow: 
+   /* 0px $hadowW $hadowW2 $blue_light_color, 
+    $hadowW 0px $hadowW2 $blue_light_color, 
+    0px -1*$hadowW $hadowW2 $blue_light_color, 
+    -1*$hadowW -0px $hadowW2 $blue_light_color,
+    -1*$hadowW -1*$hadowW $hadowW2 $blue_light_color,
+    -1*$hadowW $hadowW $hadowW2 $blue_light_color,
+    $hadowW $hadowW $hadowW2 $blue_light_color,
+    $hadowW -1*$hadowW $hadowW2 $blue_light_color,*/
+
+    0 0 10px $blue_light_color,
+    0 0 10px $blue_light_color;
+}
+
+.text-shadow-blue{
+    text-shadow: 
+    $hadowW $hadowW $hadowW2 $blue_color,
+    $hadowW -1*$hadowW $hadowW2 $blue_color,
+
+    0 0 15px $blue_color,
+    0 0 15px $blue_color;
+}
+
+.text-shadow-white{
+    text-shadow: 
+    $hadowW $hadowW $hadowW2 white,
+    $hadowW -1*$hadowW $hadowW2 white,
+
+    0 0 15px white,
+    0 0 15px white;
+}
+
+.text-height15{
+    line-height: 1.5em;
+}

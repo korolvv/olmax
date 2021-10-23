@@ -1,0 +1,187 @@
+.box-border{
+    border: 2px solid $navbar_color;
+}
+
+.box-border-white{
+    border: 2px solid white;
+}
+
+.box-border-blue-light{
+    border: 2px solid $blue_light_color;
+}
+
+.box-border-blue-dark{
+    border: 2px solid $blue_dark_color;
+}
+
+.box-border-blue{
+    border: 2px solid $blue_color;
+}
+
+.box-border1{
+    border-width: 1px !important;
+}
+
+.box-shadow-blue{
+    box-shadow: 0px 0px 1.2rem 0px $blue_color;
+}
+
+.box-shadow-white{
+    box-shadow: 0 0 12px 1px white;
+}
+
+.box-shadow-white-lg{
+    box-shadow: 0 0 80px -5px $blue_color;
+}
+
+.box-shadow-blue-icon, .box-shadow-blue-icon-inset{
+    box-shadow: 0 0 .8rem 2px $blue_color;
+}
+
+.box-shadow-blue-icon-inset{
+    box-shadow: 0 0 .1rem 2px $blue_color, 0 0 .8rem 2px $blue_color inset;
+}
+
+.box-shadow-blue05{
+    box-shadow: 0px 0px .5rem 0px $blue_color;
+}
+
+.box-shadow-blue-light{
+    box-shadow: 0px 0px 1.2rem 0px $blue_light_color;
+}
+
+.box-shadow-title{
+    text-shadow: 
+    0 0 .03em white, 
+    0 0 .07em transparentize(#1632ac, 0.2), 
+    0 0 .29em #2c83e4, 0 0 .25em #3099e3, 
+      
+    .21em .5em .9em #3099e3 ,
+ //   .24em .4em .5em #3099e3  
+ ;
+    filter: brightness(1.1);
+    letter-spacing: .5rem;
+   // transform: perspective(900px) rotate3d(180,0,0, 35deg);
+}
+
+.box-dark{
+    background-color: $navbar_second_color;
+}
+
+.box-hover{
+    display: inline-flex;
+    &>*{
+        transition: all 0.2s linear;
+    }
+    &:hover, &.active{
+        .box-border{
+            border: 2px solid $white08;
+        }
+        
+        .box-dark{
+            background-color: $navbar_color;
+        }
+        
+        .media-bg-blue08{
+            background-color: $white;
+        }
+        
+        .icon svg{
+            fill: $blue_color;
+        }
+    }
+    
+}
+
+.box-sqr{
+    padding-bottom: 100%;
+    position: relative;
+}
+
+.box-sqr50{
+    padding-bottom: 50%;
+    position: relative;
+    max-height: 200px;
+    min-height: 100px;
+}
+
+.box-clients, .box-partner{
+    margin-bottom: 3rem;
+    
+    display: block;
+    
+}
+
+.box-clients{
+    margin-bottom: 4rem;
+    margin-top: 4rem;
+}
+
+.box-back{
+  
+   
+}
+
+
+
+.box-clients{
+    height: 8rem;
+    max-width: 18rem;
+    width: 100%;
+    display: block;
+    svg{
+        transition: 0.2s;
+    }
+    &:hover{
+        .icon-wrapper-partners{
+            svg{
+                stroke: $blue_light_color !important;
+            }
+        }
+    }
+}
+
+.box-clients-marg{
+    margin-top: -30px;
+    width: 100%;
+    position: relative;
+}
+
+.box-content{
+    min-height: calc(100vh - 35rem - 1px);
+
+}
+
+.box-partner{ 
+    transition: all .2s;
+    box-shadow: none;
+    background-color: rgba(0,0,0,0.6);
+   
+    border: 0.5px solid  $blue_color;
+    svg{
+        transition: all .2s;
+    }
+    &:hover{
+        border-color: transparent;
+        //box-shadow: 0 0 .8rem 2px $blue_color;
+        background-color: transparentize(#3099e3, 0.75) ;
+        .icon-wrapper-partners2 svg{
+            stroke: $blue_light_color;
+        }
+    }
+    &:first-child{
+        margin-top: .3rem;
+    }
+    &:last-child{
+        margin-bottom: .3rem;
+    }
+    
+}
+
+
+
+.box-about-logo{
+    width: 17rem;
+}
+
+

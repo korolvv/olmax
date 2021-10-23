@@ -1,0 +1,293 @@
+$r_move: .5rem;
+$inner_marg: ($r_move/2 * -1);
+$borer_coub: .2rem;
+$delta_max: calc(100% + #{$inner_marg} );
+$delta_min: calc(0%  + #{$inner_marg} );
+$coub_duration: 20s;
+@keyframes path1 {
+    from { left: $delta_min; top: $delta_min; }
+    24% {left: $delta_max; top: $delta_min;}
+    55% {left: $delta_max; top: $delta_max;}
+    76% {left: $delta_min; top: $delta_max;}
+    to { left: $delta_min; top: $delta_min; }
+    
+}
+
+@keyframes path2 {   
+    0% {left: $delta_max; top: $delta_min;}
+    25% {left: $delta_max; top: $delta_max;}
+    50% {left: $delta_min; top: $delta_max;}
+    75% { left: $delta_min; top: $delta_min; }
+    100% {left: $delta_max; top: $delta_min;}     
+}
+
+@keyframes path3 {   
+    
+    0% {left: $delta_max; top: $delta_max;}
+    28% {left: $delta_min; top: $delta_max;}
+    60% { left: $delta_min; top: $delta_min; }
+    78% {left: $delta_max; top: $delta_min;}  
+    100% {left: $delta_max; top: $delta_max;}   
+}
+
+@keyframes path4 {   
+    
+    0% {left: $delta_min; top: $delta_max;}
+    25% { left: $delta_min; top: $delta_min; }
+    50% {left: $delta_max; top: $delta_min;}  
+    75% {left: $delta_max; top: $delta_max;} 
+    100% {left: $delta_min; top: $delta_max;}
+}
+
+@keyframes path_main {
+    from { transform: rotate(0)   }
+    50% { transform: rotate(-180deg)   }
+    to { transform: rotate(-360deg)  }
+}
+
+
+.about-coub{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    border: 1px solid transparentize($blue_color, .4);
+    
+    animation: path_main  ($coub_duration + 2) infinite linear; 
+}
+
+.about-coub-move{
+    width: $r_move;
+    height: $r_move;
+    border-radius: 100%;
+    background-color: #fff;
+    position: absolute;
+    top: $inner_marg; left: $inner_marg;
+    z-index: 4;
+    &:nth-child(1){
+        animation: path1  $coub_duration infinite linear;  
+    }
+    &:nth-child(2){
+        animation: path2  $coub_duration infinite linear;  
+    }
+    &:nth-child(3){
+        animation: path3  $coub_duration infinite linear;  
+    }
+    &:nth-child(4){
+        animation: path4  $coub_duration infinite linear;  
+    }
+    
+    &:nth-child(2),  &:nth-child(3){
+        left: $delta_max;
+        
+    }
+    &:nth-child(3), &:nth-child(4){
+        top: auto;
+        bottom: $inner_marg;
+    }
+    &:nth-child(4){
+        left: $inner_marg;
+        right: auto;
+    }
+}
+
+.about-coub-container{
+    width: 25rem;
+    height: 25rem;
+    display: block;
+    position: relative;
+}
+ 
+
+.about-coub--static{
+    @extend .about-coub;
+    animation: none;
+    background-color: rgba(0, 0, 0, 0.6);
+        transform: rotate(45.1deg) perspective(1000px)  translateZ(0);;
+        -webkit-font-smoothing: subpixel-antialiased;
+        backface-visibility: hidden;
+    .about-coub-move{
+        &:nth-child(1){
+            animation: path1  $coub_duration infinite linear;  
+        }
+         
+        &:nth-child(2){
+            animation: path3  $coub_duration infinite linear;  
+        }
+
+        animation: none;
+
+        &:nth-child(2){
+            left: $delta_max;
+            top: auto;
+            bottom: $inner_marg;
+        }
+    }
+}
+
+.about-coub--response{
+    @extend .about-coub--static;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: all .3s linear;
+    backface-visibility: hidden;
+    -webkit-filter: blur(0);
+    &:hover{
+        //z-index: 1;
+        
+    }
+}
+
+.about-coub-container--response{
+    @extend .about-coub-container;
+    width: 100%;
+    padding-bottom: 100%;
+    height: inherit;
+
+}
+
+.about-coub-inner-r:hover+.about-coub--response, .about-coub--response:hover{
+   //width: calc(300% + 12rem);
+   //left:  calc(-100% - 6rem);
+}
+
+
+
+.about-coub-inner{
+    @extend .media-bg;
+    //overflow: hidden;
+   
+    -webkit-filter: blur(0);
+    transform:  perspective(1000px)  translateZ(0);
+    -webkit-font-smoothing: subpixel-antialiased;
+    backface-visibility: hidden;
+    //z-index: 2;
+}
+
+.about-coub-inner-r{
+    @extend .media-bg;
+    height: 70%;
+    width: 80%;
+    top: 15%;
+    left: 10%;
+    z-index: 1;
+}
+ 
+.about-coub-active-hide{
+
+}
+
+.about-coub-active{
+    @extend .media-bg;
+    z-index: 2;
+    transform: rotate(-45.1deg) perspective(1000px)  translateZ(0);
+    -webkit-font-smoothing: subpixel-antialiased;
+    backface-visibility: hidden;
+    -webkit-filter: blur(0);
+}
+
+.icon-wrapper-about-main{
+    z-index: 1;
+}
+.about-coub-content{
+    width: 100%;
+    height: 50%;
+    position: relative;
+    background-color: transparent;
+    @include media-breakpoint-down(md){
+        display: none;
+    }
+   
+}
+
+.about-coub-content-res{
+     display: block;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+     line-height: 1.3em;
+    padding: 3rem;
+}
+.about-coub-title{
+    @extend .about-coub-content;
+    height: auto !important;
+    width: auto !important;
+    background-color: transparent !important;
+    
+    padding-left: 3rem;
+}
+
+.about-coub-content-inner{
+/*    @extend .media-bg;
+     background-color: transparent;*/
+     line-height: 2em;
+     padding-left: 3rem;
+}
+.about-coub-wrap{
+    padding: 15px;
+    perspective: 100px;
+    position: relative;
+    &:hover{
+        z-index: 2;
+    }
+    @include media-breakpoint-down(md){
+        padding: 5px;
+    }
+    &>a:hover{
+        .about-coub-content-res{
+            bottom: 0;
+        }
+    }
+}
+.about-coub-container--left{
+    margin-top: -29%;
+    right: -14.5%;
+}
+
+.about-coub-container--right{
+    margin-top: -29%;
+    left: -14.5%;
+}
+
+.about-coub-container--first{
+    margin-top: -20%;
+}
+
+.about-coub-container--last{
+    margin-bottom: 15%;
+}
+
+.about-coub-zoom{
+    position: absolute;
+left: 0;
+right: 0;
+top: 0;
+width: 100%;
+height: 100%;
+transition: all 0.5s;
+}
+
+.box-contacts--fade:hover{
+    .about-coub--response{
+        transform: rotate(0)
+    }
+    .about-coub-inner-r{
+        height: 100%;
+        top: 5%;
+        top: 0;
+        width: 70%;
+    }
+    .about-coub-content{
+        height: calc(100% - 17rem);
+    }
+    .about-coub-zoom{
+        left: -10%;
+        width: 120%;
+    }
+
+    .about-coub-move{
+            animation: none !important;
+            opacity: 0;   
+    }
+}

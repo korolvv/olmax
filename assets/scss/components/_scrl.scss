@@ -1,0 +1,30 @@
+.vue-scrollbar__scrollbar-vertical {
+    opacity: 1;
+     
+  }
+
+  .vue-scrollbar__scrollbar-vertical{
+        opacity: 0.8 !important;
+      right: auto;
+      left: 0;
+      background-color: transparent;
+      &:after{
+          content: ' ';
+          display: block;
+          height: 100%;
+          position: absolute;
+          width: 1px;
+          left: 2px;
+          top: 0;
+          background-color: $blue_light_color; 
+      }
+      &:hover{
+          opacity: 0.8;
+      }
+  }
+
+  .vue-scrollbar__scrollbar-vertical .scrollbar {
+    width: 5px;
+    border-radius: 3px;
+    background-color: $blue_light_color; 
+  }

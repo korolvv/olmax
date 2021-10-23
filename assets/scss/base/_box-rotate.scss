@@ -1,0 +1,33 @@
+.box-rotate-container{
+    position: relative;
+    
+ 
+    display: inline-block;
+    .box-rotate{
+        transition: all .2s 0s linear;
+    }
+   .box-rotate-item{
+        z-index: 1;
+        opacity: 0;
+        transition: all 0s .1s linear;
+        &:last-child{
+            z-index: 2;
+            opacity: 1;
+        }
+    }
+    &:hover, &.active{
+        //transform: rotate3d(0, 1, 0, 180deg) scaleX(-1);
+        .box-rotate{
+            transform: rotateY(180deg) scaleX(-1);
+            &>.box-rotate-item:first-child{
+                z-index: 2;
+                opacity: 1;
+            }
+            &>.box-rotate-item:last-child{
+                z-index: 1;
+                opacity: 0;
+            }
+        }
+        
+    }
+}

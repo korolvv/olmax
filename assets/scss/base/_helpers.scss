@@ -1,0 +1,72 @@
+.flex-center{
+    justify-content: center;
+    align-items: center;
+}
+
+.p-fixed{
+    position: fixed !important;
+}
+
+.p-absolute{
+    position: absolute !important;
+}
+
+
+
+
+[v-cloak] { display:none !important; }
+
+.marg{
+    height: 4rem;
+    position: relative;
+    clear: both;
+    width: 100%;
+    @include media-breakpoint-down(sm){
+        height: 4rem !important;
+    }
+}
+
+.marg05{
+    height: 2rem;
+    position: relative;
+    clear: both;
+    width: 100%;
+}
+
+.marg2{
+    height: 8rem;
+    @extend .marg;
+}
+.marg15{
+    height: 6rem;
+    @extend .marg;
+}
+
+.marg3{
+    height: 12rem;
+    @extend .marg;
+}
+
+.box-hidden{
+    overflow: hidden !important;
+}
+
+.pagination-custom{
+    .VueCarousel-dot{
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        margin-top: 4rem !important;
+        line-height: 5px;
+    }
+    .VueCarousel-dot-button{
+        transition: 0.2s;
+        border-radius: 0;
+        &:hover{
+            background-color: grey !important;
+        }
+        width: 20px !important;
+        
+        height: 5px !important;
+    }
+    
+}

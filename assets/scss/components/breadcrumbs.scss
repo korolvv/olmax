@@ -1,0 +1,82 @@
+.breadcrumbs{
+    display: inline-flex;
+    margin: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li{
+        font-size: 1rem;
+        line-height: 3rem;
+        width: 11rem;
+        text-align: center;
+        margin: 0 0.1rem;
+        text-transform: uppercase;
+        border: 1px solid transparent;
+        background-color: rgba(0,0,0,0.5);
+        &:hover, &.active{
+            border: 1px solid white;
+            box-shadow: 0 0 8px 0px white;
+            .breadcrumbs-link{
+                color: white !important; 
+            }
+            
+        }
+    }
+}
+
+@keyframes title {
+    from { transform: perspective(1900px) rotate3d(190,15,0, 30deg); }
+    50% {transform: perspective(1900px) rotate3d(170, -15, -10, 30deg);}
+    
+    to { transform: perspective(1900px) rotate3d(190,15,0, 30deg); }
+    
+}
+
+.breadcrumbs-title{
+    font-size: 6rem;
+    text-transform: uppercase;
+    line-height: 6rem;
+    font-weight: 200;
+    margin: 0;
+    text-align: center;
+    text-shadow: 
+    0 0 .2rem white, 
+    0 0 .5rem transparentize(#1632ac, 0.2), 
+    0 0 1.5rem #2c83e4, 0 0 1.5rem #3099e3, 
+    
+    1.0rem 3.5rem 5.0rem #3099e3 ,
+    1.0rem 2.5rem 3.5rem #3099e3, 
+    ;
+    letter-spacing: 1.2rem;
+    z-index: 1;
+    
+    transform: perspective(900px) rotate3d(190,15,0, 20deg);
+    animation: title  6s infinite;  
+    filter: brightness(1.1);
+    position: relative;
+    bottom: -0.1em;
+    @include media-breakpoint-down(md){
+        font-size: 3.8rem;
+        line-height: 3.8rem;
+        letter-spacing: 0.6rem;
+        animation: none; 
+        text-shadow: 
+        0 0 0rem white, 
+        0 0 .5rem transparentize(#1632ac, 0.2), 
+        0 0 1.5rem #2c83e4, 0 0 1.5rem #3099e3, 
+        
+        1.0rem 3.5rem 5.0rem #3099e3 ,
+        1.0rem 2.5rem 3.5rem #3099e3, 
+        ;
+    }
+    
+    
+}
+
+.breadcrumbs-link{
+    display: inline-block;
+    width: 100%;
+    bottom: -0.1em;
+    position: relative;
+    
+}

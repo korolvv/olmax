@@ -1,0 +1,130 @@
+.gallery-btn{
+    height: 14rem;
+    width: 18rem;
+    position: absolute;
+    right:  -11rem;
+    top: 50%;
+    margin-top: -7rem;
+    opacity: 0;
+    z-index: 2;
+    display: block;
+    cursor: pointer;
+   
+    transition: opacity 0.2s;
+    
+    @extend .box-shadow-blue05;
+    
+}
+
+.gallery-more{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    transform: translateY(200%);
+    opacity: 0;
+    transition: all 0.2s;
+    text-align: center;
+    letter-spacing: .5em;
+}
+.gallery-next, .gallery-prev{
+    height: 40px;
+    width: 40px;
+    position: relative;
+    display: block;
+    margin-top: -80px;
+    margin-left: 50px;
+    cursor: pointer;
+    &:before, &:after{
+        content: ' ';
+        display: block;
+        position: absolute;
+        top: 50%;
+        margin-top: -1px;
+        width: 100%;
+        height: 2px;
+        transform: rotate(45deg);
+        transform-origin: 100% 100%;
+        background-color: #fff;
+        transition: all 0.2s;
+    }
+    &:after{
+        transform: rotate(-45deg);
+        transform-origin: 100% 0;
+    }
+    &:hover {
+        &:before, &:after{
+            background-color: $blue_color;
+        }
+         
+    }
+}
+
+.gallery-prev{
+    margin-right: 50px;
+    margin-left: 0;
+    &:before{
+     
+        transform-origin: 0 0;
+    }
+    &:after{
+      
+        transform-origin: 0 100%;
+    }
+}
+
+.box-contacts--fade:hover{
+    .gallery-btn{
+        opacity: 0.6;
+    }
+}
+
+.gallery-popup-wrapp{
+    @extend .media-bg;
+    @extend .media-bg-black08;
+    position: fixed !important;
+    display: flex;
+    @extend .flex-center;
+    z-index: 15;
+}
+
+.gallery-popup{
+    position: relative;
+    width: 100%;
+     
+     
+    cursor:  move ;
+}
+
+.gallery-popup-image{
+    position: relative;
+    height: 550px;
+    max-height: 80vh;
+    margin-bottom: 4rem;
+}
+
+.gallery-popup-title{
+    text-align: center;
+    top: .2em;
+    position: relative;
+}
+
+.gallery-popup-carousel{
+    width: 800px;
+    max-width: 90%;
+}
+
+.gallery-popup-wrapp .popup-close{
+     width: 25px;
+     height: 25px;
+    top: 5rem;
+    right: 5rem;
+}
+
+.gallery-btn:hover{
+    opacity: 1 !important;
+    .gallery-more{
+        transform: translateY(160%);
+        opacity: 1;
+    }
+}
